@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1 id="result"></h1>
+
+    <script>
+
+        const dataArray = ["bed", "bed", "mettress", "mettress", "table"];
+        localStorage.setItem('myData', JSON.stringify(dataArray));
+
+
+        const storedData = JSON.parse(localStorage.getItem('myData')) || [];
+
+
+        const selectedItem = "bed";
+        let count = 0;
+        storedData.forEach(item => {
+            if (item === selectedItem) {
+                count++;
+            }
+        });
+        if (count > 0) {
+            document.getElementById("result").innerText = `${selectedItem} found ${count} times in local storage.`;
+        } else {
+            document.getElementById("result").innerText = `${selectedItem} not found in local storage.`;
+        }
+    </script>
+
+</body>
+
+</html>

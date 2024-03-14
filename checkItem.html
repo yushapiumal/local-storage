@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1 id="yushan">Hello and welcome</h1>
+
+    <script>
+
+       const dataArray = ["yushan", "piumal", "AD"];
+        localStorage.setItem('myData', JSON.stringify(dataArray));
+
+
+        const storedData = JSON.parse(localStorage.getItem('myData')) || [];
+
+
+        const selectedItemIndex = AD;
+
+       
+
+
+        if (selectedItemIndex >= 0 && selectedItemIndex < storedData.length) {
+            const selectedDataItem = storedData[selectedItemIndex];
+            document.getElementById("yushan").innerText = `Selected item: ${selectedDataItem}`;
+        } else {
+            document.getElementById("yushan").innerText = `Invalid index or no data found`;
+        }
+    </script>
+
+</body>
+
+</html>

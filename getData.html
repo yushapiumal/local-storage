@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>check data</title>
+</head>
+
+<body>
+
+    <h1>check data</h1>
+    <script>
+
+
+        const dataArray = [1, 2, 3, 4, 5];
+
+
+        const dataString = JSON.stringify(dataArray);
+
+
+        localStorage.setItem('myData', dataString);
+        const selectdata = JSON.stringify(dataString[0]);
+
+        const storedDataString = localStorage.getItem('myData');
+
+        if (localStorage.getItem("myData")) {
+            document.querySelector("h1").innerText = `this is your array ${localStorage.getItem("myData")}`;
+        } else {
+            document.querySelector("h1").innerText = `No data`;
+        }
+    </script>
+
+</body>
+
+</html>
