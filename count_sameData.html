@@ -8,28 +8,27 @@
 </head>
 
 <body>
-    <h1 id="result"></h1>
+    <h1 id="yushan">Hello and welcome</h1>
 
     <script>
 
-        const dataArray = ["bed", "bed", "mettress", "mettress", "table"];
+       const dataArray = ["yushan", "piumal", "AD"];
         localStorage.setItem('myData', JSON.stringify(dataArray));
 
 
         const storedData = JSON.parse(localStorage.getItem('myData')) || [];
 
 
-        const selectedItem = "bed";
-        let count = 0;
-        storedData.forEach(item => {
-            if (item === selectedItem) {
-                count++;
-            }
-        });
-        if (count > 0) {
-            document.getElementById("result").innerText = `${selectedItem} found ${count} times in local storage.`;
+        const selectedItemIndex = 2;
+
+       
+
+
+        if (selectedItemIndex >= 0 && selectedItemIndex < storedData.length) {
+            const selectedDataItem = storedData[selectedItemIndex];
+            document.getElementById("yushan").innerText = `Selected item: ${selectedDataItem}`;
         } else {
-            document.getElementById("result").innerText = `${selectedItem} not found in local storage.`;
+            document.getElementById("yushan").innerText = `Invalid index or no data found`;
         }
     </script>
 
